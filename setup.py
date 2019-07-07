@@ -12,13 +12,12 @@ description = LONG_DESCRIPTION.split("\n")[1]
 
 PAYLOAD["description"] = LONG_DESCRIPTION.split("\n")[1]
 PAYLOAD["long_description"] = LONG_DESCRIPTION
-PAYLOAD["install_requires"] = ["numpy", ]  # Same as requirements.txt
 
 
-payload = {}
+kwargs = {}
 for key in PAYLOAD:
     if PAYLOAD[key]:
-        payload[key] = PAYLOAD[key]
+        kwargs[key] = PAYLOAD[key]
 
 
-setup(**payload)
+setup(**kwargs)
