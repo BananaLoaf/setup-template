@@ -6,18 +6,19 @@ except ModuleNotFoundError:
 from template import PAYLOAD
 
 
+import json
+assert PAYLOAD["description"] == "This line is a description"
+assert json.dumps(PAYLOAD).find("TEMPLATE") == -1
+assert json.dumps(PAYLOAD).find("null") == -1
+
+
 with open("README.md", "r") as file:
     LONG_DESCRIPTION = file.read()
-description = LONG_DESCRIPTION.split("\n")[1]
-
-PAYLOAD["description"] = LONG_DESCRIPTION.split("\n")[1]
 PAYLOAD["long_description"] = LONG_DESCRIPTION
-
 
 kwargs = {}
 for key in PAYLOAD:
-    if PAYLOAD[key]:
+    if PAYLOAD[key] is not None:
         kwargs[key] = PAYLOAD[key]
-
 
 setup(**kwargs)

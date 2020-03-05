@@ -1,15 +1,20 @@
+from setuptools import find_packages
+
+__version__ = "1.0"
+
+
 PAYLOAD = {
-    "name": "template",
-    "version": "1.0",
-    "install_requires": ["numpy", ],
-    "packages": ("template", ),  # Better to be done by hand
+    "name": None,
+    "version": __version__,
+    "install_requires": None,
+    "packages": find_packages(),
     "entry_points": {
         "console_scripts": [
-            "template = template.main:main",
-            "template-again = template.main:main"
+            "template = template.main:main TEMPLATE",
+            "template-again = template.main:main TEMPLATE"
         ],
         "gui_scripts": [
-            "template = template.main:main"
+            "template = template.main:main TEMPLATE"
         ]
     },
 
@@ -20,22 +25,22 @@ PAYLOAD = {
     "maintainer_email": "bananaloaf@protonmail.com",
     "license": None,
 
-    "description": None,
+    "description": "This line is a description",
     "long_description": None,
     "long_description_content_type": "text/markdown",
-    "keywords": ["template", "whatever"],
+    "keywords": ["template TEMPLATE", "whatever TEMPLATE"],
 
-    "url": "https://github.com/BananaLoaf/template",
+    "url": "https://github.com/BananaLoaf/template TEMPLATE",
     "download_url": None,
     "project_urls": {
-        "Setup docs": "https://docs.python.org/2/distutils/setupscript.html",
-        "Classifiers": "https://pypi.org/classifiers/"
+        "Setup docs TEMPLATE": "https://docs.python.org/2/distutils/setupscript.html TEMPLATE",
+        "Classifiers TEMPLATE": "https://pypi.org/classifiers/ TEMPLATE"
     },
 
     "classifiers": [
-        "Development Status :: 5 - Production/Stable",
-        "Programming Language :: Python :: 3",
-        "License :: OSI Approved :: MIT License",
-        "Operating System :: OS Independent"
+        "Development Status :: 5 - Production/Stable TEMPLATE",
+        "Programming Language :: Python :: 3 TEMPLATE",
+        "License :: OSI Approved :: MIT License TEMPLATE",
+        "Operating System :: OS Independent TEMPLATE"
     ]
 }
