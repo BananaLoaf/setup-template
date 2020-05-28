@@ -5,14 +5,14 @@ from setuptools import setup, find_packages
 # Import numpy as np
 
 # Project
-from template import __version__
+from template import PACKAGE_NAME, __version__
 
 
 with open("README.md", "r") as file:
     LONG_DESCRIPTION = file.read()
 
 # https://docs.python.org/2/distutils/setupscript.html
-setup(name="template-package",
+setup(name=PACKAGE_NAME,
       version=__version__,
       install_requires=["numpy"],
       packages=find_packages(),
